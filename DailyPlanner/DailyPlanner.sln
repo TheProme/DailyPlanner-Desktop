@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31729.503
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DailyPlanner", "DailyPlanner\DailyPlanner.csproj", "{F22BAC93-8AD8-44AF-B31D-8A1AB7D54E40}"
+	ProjectSection(ProjectDependencies) = postProject
+		{6F7B48CD-4BF8-41A1-ABF5-05C314C062C7} = {6F7B48CD-4BF8-41A1-ABF5-05C314C062C7}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DailyPlanner.DAL", "DailyPlanner.DAL\DailyPlanner.DAL.csproj", "{6F7B48CD-4BF8-41A1-ABF5-05C314C062C7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F22BAC93-8AD8-44AF-B31D-8A1AB7D54E40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F22BAC93-8AD8-44AF-B31D-8A1AB7D54E40}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F22BAC93-8AD8-44AF-B31D-8A1AB7D54E40}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F22BAC93-8AD8-44AF-B31D-8A1AB7D54E40}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F7B48CD-4BF8-41A1-ABF5-05C314C062C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F7B48CD-4BF8-41A1-ABF5-05C314C062C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F7B48CD-4BF8-41A1-ABF5-05C314C062C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F7B48CD-4BF8-41A1-ABF5-05C314C062C7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1EE8D036-1DEC-4D1A-A30C-C655CE53639E}
+	EndGlobalSection
+EndGlobal
