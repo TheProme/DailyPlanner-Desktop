@@ -9,10 +9,10 @@ namespace DailyPlanner
 {
     public class DailyPlannerService
     {
-        private readonly UnitOfWork _plannerUOW;
+        public UnitOfWork PlannerUOW { get; }
         public DailyPlannerService(UnitOfWork plannerUOW)
         {
-            _plannerUOW = plannerUOW;
+            PlannerUOW = plannerUOW;
         }
 
     }

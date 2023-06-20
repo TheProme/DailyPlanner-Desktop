@@ -9,45 +9,45 @@ using System.Threading.Tasks;
 
 namespace DailyPlanner.DAL.EF.Repositories
 {
-    public class DailyEventRepository : IRepository<DailyEvent>
+    public class UserRepository : IRepository<User>
     {
         private readonly PlannerDbContext _plannerContext;
-        public DailyEventRepository(PlannerDbContext plannerContext)
+        public UserRepository(PlannerDbContext plannerContext)
         {
             _plannerContext = plannerContext;
         }
 
-        public void Add(DailyEvent item)
+        public void Add(User item)
         {
             _plannerContext.Add(item);
         }
 
-        public void AddRange(IEnumerable<DailyEvent> items)
+        public void AddRange(IEnumerable<User> items)
         {
             throw new NotImplementedException();
         }
 
-        public void Delete(DailyEvent item)
+        public void Delete(User item)
         {
             throw new NotImplementedException();
         }
 
-        public void DeleteRange(IEnumerable<DailyEvent> items)
+        public void DeleteRange(IEnumerable<User> items)
         {
             throw new NotImplementedException();
         }
 
-        public IEnumerable<DailyEvent> GetAll()
+        public IEnumerable<User> GetAll()
         {
             throw new NotImplementedException();
         }
 
-        public DailyEvent GetById(int id)
+        public User GetById(int id)
         {
-            throw new NotImplementedException();
+            return _plannerContext.Users.Find(id);
         }
 
-        public DailyEvent GetByName(string name)
+        public User GetByName(string name)
         {
             throw new NotImplementedException();
         }
@@ -62,14 +62,14 @@ namespace DailyPlanner.DAL.EF.Repositories
             return _plannerContext.SaveChangesAsync();
         }
 
-        public void Update(DailyEvent item)
+        public void Update(User item)
         {
-            throw new NotImplementedException();
+            _plannerContext.Update(item);
         }
 
-        public void UpdateRange(IEnumerable<DailyEvent> items)
+        public void UpdateRange(IEnumerable<User> items)
         {
-            throw new NotImplementedException();
+            _plannerContext.UpdateRange(items);
         }
     }
 }

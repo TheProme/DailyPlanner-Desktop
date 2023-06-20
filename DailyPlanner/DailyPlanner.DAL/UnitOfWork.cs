@@ -16,21 +16,25 @@ namespace DailyPlanner.DAL
         public readonly PlannerDbContext PlannerContext;
 
         public IRepository<DailyEvent> DailyEvents { get; }
+        public IRepository<User> Users { get; }
 
         public UnitOfWork(PlannerDbContext context)
         {
             PlannerContext = context ?? throw new ArgumentNullException(nameof(context));
             DailyEvents = new DailyEventRepository(PlannerContext);
+            Users = new UserRepository(PlannerContext);
         }
 
         public void SaveChanges()
         {
             DailyEvents.SaveChanges();
+            Users.SaveChanges();
         }
 
         public async Task SaveChangesAsync()
         {
             await DailyEvents.SaveChangesAsync();
+            await Users.SaveChangesAsync();
         }
 
         public void Dispose()

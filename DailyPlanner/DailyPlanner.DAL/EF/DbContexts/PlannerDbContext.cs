@@ -11,7 +11,8 @@ namespace DailyPlanner.DAL.EF.DbContexts
         {
             Database.EnsureCreated();
         }
-        public DbSet<DailyEvent> DailyEvents { get; set; }
+        public DbSet<DailyEvent> DailyEvents => Set<DailyEvent>();
+        public DbSet<User> Users => Set<User>();
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer(ConfigurationManager.ConnectionStrings["DailyPlannerDB"].ConnectionString);

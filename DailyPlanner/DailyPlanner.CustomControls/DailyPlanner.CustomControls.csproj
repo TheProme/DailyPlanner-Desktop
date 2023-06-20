@@ -7,11 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Ninject" Version="3.3.4" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\DailyPlanner.CustomControls\DailyPlanner.CustomControls.csproj" />
     <ProjectReference Include="..\DailyPlanner.DAL\DailyPlanner.DAL.csproj" />
   </ItemGroup>
 

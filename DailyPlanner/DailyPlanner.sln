@@ -8,7 +8,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DailyPlanner", "DailyPlanne
 		{6F7B48CD-4BF8-41A1-ABF5-05C314C062C7} = {6F7B48CD-4BF8-41A1-ABF5-05C314C062C7}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DailyPlanner.DAL", "DailyPlanner.DAL\DailyPlanner.DAL.csproj", "{6F7B48CD-4BF8-41A1-ABF5-05C314C062C7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DailyPlanner.DAL", "DailyPlanner.DAL\DailyPlanner.DAL.csproj", "{6F7B48CD-4BF8-41A1-ABF5-05C314C062C7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DailyPlanner.CustomControls", "DailyPlanner.CustomControls\DailyPlanner.CustomControls.csproj", "{1994EC35-737D-4902-A639-97748A756E91}"
+	ProjectSection(ProjectDependencies) = postProject
+		{6F7B48CD-4BF8-41A1-ABF5-05C314C062C7} = {6F7B48CD-4BF8-41A1-ABF5-05C314C062C7}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -24,6 +29,10 @@ Global
 		{6F7B48CD-4BF8-41A1-ABF5-05C314C062C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6F7B48CD-4BF8-41A1-ABF5-05C314C062C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6F7B48CD-4BF8-41A1-ABF5-05C314C062C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1994EC35-737D-4902-A639-97748A756E91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1994EC35-737D-4902-A639-97748A756E91}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1994EC35-737D-4902-A639-97748A756E91}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1994EC35-737D-4902-A639-97748A756E91}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
