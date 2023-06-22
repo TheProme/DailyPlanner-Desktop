@@ -1,4 +1,6 @@
 ﻿using DailyPlanner.DAL;
+using DailyPlanner.DAL.EF.Models;
+using DailyPlanner.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,11 +11,15 @@ namespace DailyPlanner
 {
     public class DailyPlannerService
     {
-        public UnitOfWork PlannerUOW { get; }
+        public UsersWorker<User> UsersWorker { get; private set; }
+        public DailyEventWorker<DailyEvent> EventsWorker { get; private set; }
+
+        private readonly UnitOfWork _plannerUOW;
         public DailyPlannerService(UnitOfWork plannerUOW)
         {
-            PlannerUOW = plannerUOW;
+            _plannerUOW = plannerUOW;
+            UsersWorker = new UsersWorker<User>(_plannerUOW);
+            EventsWorker = new DailyEventWorker<DailyEvent>(_plannerUOW);
         }
-
     }
 }

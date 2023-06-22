@@ -8,6 +8,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <controls:UserView x:Name="card"/>
+        <ListBox ItemsSource="{Binding DailyEvents}" SelectedItem="{Binding SelectedEvent}"/>
+        <controls:PlannerCard Width="200" Height="300" x:Name="card"/>
     </Grid>
 </Window>

@@ -24,27 +24,33 @@ namespace DailyPlanner.DAL.EF.Repositories
 
         public void AddRange(IEnumerable<DailyEvent> items)
         {
-            throw new NotImplementedException();
+            foreach (var item in items)
+            {
+                _plannerContext.Add(item);
+            }
         }
 
         public void Delete(DailyEvent item)
         {
-            throw new NotImplementedException();
+            _plannerContext.Remove(item);
         }
 
         public void DeleteRange(IEnumerable<DailyEvent> items)
         {
-            throw new NotImplementedException();
+            foreach (var item in items)
+            {
+                _plannerContext.Remove(item);
+            }
         }
 
         public IEnumerable<DailyEvent> GetAll()
         {
-            throw new NotImplementedException();
+            return _plannerContext.DailyEvents.AsEnumerable();
         }
 
         public DailyEvent GetById(int id)
         {
-            throw new NotImplementedException();
+            return _plannerContext.DailyEvents.Find(id);
         }
 
         public DailyEvent GetByName(string name)
@@ -64,12 +70,19 @@ namespace DailyPlanner.DAL.EF.Repositories
 
         public void Update(DailyEvent item)
         {
-            throw new NotImplementedException();
+            _plannerContext.Update(item);
         }
 
         public void UpdateRange(IEnumerable<DailyEvent> items)
         {
-            throw new NotImplementedException();
+            foreach (var item in items)
+            {
+                var existingItem = GetById(_plannerContext.DailyEvents.FirstOrDefault(i => i.ID == item.ID).ID);
+                existingItem.Name = item.Name;
+                existingItem.IsCompleted = item.IsCompleted;
+                existingItem.Description = item.Description;
+                existingItem.Date = item.Date;
+            }
         }
     }
 }

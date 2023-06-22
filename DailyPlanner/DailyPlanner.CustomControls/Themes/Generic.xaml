@@ -11,7 +11,38 @@
                     <Border Background="{TemplateBinding Background}"
                             BorderBrush="{TemplateBinding BorderBrush}"
                             BorderThickness="{TemplateBinding BorderThickness}">
-                        <ContentPresenter/>
+                        <Grid x:Name="mainViewGrid" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="0.2*"/>
+                                <RowDefinition/>
+                                <RowDefinition Height="0.2*"/>
+                                <RowDefinition Height="0.2*"/>
+                            </Grid.RowDefinitions>
+                            <TextBlock Text="{Binding SelectedEvent.Name}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                            <Grid x:Name="innerViewGrid" Grid.Row="1">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition Width="0.3*"/>
+                                </Grid.ColumnDefinitions>
+                                <StackPanel>
+                                    <Label Content="Description:"/>
+                                    <TextBlock Text="{Binding SelectedEvent.Description}"/>
+                                </StackPanel>
+                                <StackPanel  Grid.Column="1">
+                                    <Label Content="Done:"/>
+                                    <CheckBox IsChecked="{Binding SelectedEvent.IsCompleted}" IsThreeState="False"/>
+                                </StackPanel>
+                            </Grid>
+                            <DatePicker Grid.Row="2" SelectedDate="{Binding SelectedEvent.Date}" IsEnabled="False"/>
+                            <Grid Grid.Row="3">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Button Content="Change" Command="{Binding UpdateCommand}"/>
+                                <Button Grid.Column="1" Content="Undo" Command="{Binding UndoCommand}"/>
+                            </Grid>
+                        </Grid>
                     </Border>
                 </ControlTemplate>
             </Setter.Value>

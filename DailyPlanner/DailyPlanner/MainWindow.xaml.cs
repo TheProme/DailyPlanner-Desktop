@@ -1,6 +1,7 @@
 ﻿using DailyPlanner.DAL;
 using DailyPlanner.DAL.EF.Interfaces;
 using DailyPlanner.DAL.EF.Models;
+using DailyPlanner.ViewModels;
 using Ninject;
 using System;
 using System.Collections.Generic;
@@ -27,7 +28,8 @@ namespace DailyPlanner
         public MainWindow()
         {
             var dailyPlannerService = new DailyPlannerService(KernelManager.Kernel.Get<UnitOfWork>());
-            this.DataContext = dailyPlannerService.PlannerUOW.Users.GetById(1);
+            DailyEventViewModel dailyVM = new DailyEventViewModel(dailyPlannerService.EventsWorker);
+            this.DataContext = dailyVM;
             InitializeComponent();
         }
     }
